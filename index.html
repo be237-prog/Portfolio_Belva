@@ -7,33 +7,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --white: #FDFAF7;
-  --off: #F7F3EE;
-  --paper: #EFE9E1;
-  --ink: #1C1A18;
-  --ink2: #3A3630;
-  --muted: #9A8F82;
-  --terra: #C4725A;
-  --terra-light: #D9957E;
-  --terra-pale: #F5DDD7;
-  --sage: #7A9180;
-  --sage-pale: #DCE8DF;
-  --border: rgba(28,26,24,0.1);
-  --shadow: 0 4px 32px rgba(28,26,24,0.08);
-  --shadow-lg: 0 20px 60px rgba(28,26,24,0.12);
+  --white: #FFFFFF;
+  --off: #F7F0F8;
+  --paper: #EDE4F3;
+  --ink: #1A1A2E;
+  --ink2: #2D2D4A;
+  --muted: #8A86A0;
+  --terra: #C85FA0;
+  --terra-light: #D97BBB;
+  --terra-pale: #F7E0F1;
+  --sage: #5B8FC9;
+  --sage-pale: #D8E9F7;
+  --border: rgba(200,95,160,0.15);
+  --shadow: 0 4px 32px rgba(91,143,201,0.1);
+  --shadow-lg: 0 20px 60px rgba(200,95,160,0.14);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
-
-/* CURSOR */
 #cur{position:fixed;width:8px;height:8px;background:var(--terra);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s;mix-blend-mode:multiply;}
-#cur-ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(196,114,90,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;}
+#cur-ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(200,95,160,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;}
 body.hov #cur{width:14px;height:14px;}
 body.hov #cur-ring{width:50px;height:50px;border-color:var(--terra);}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(253,250,247,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--terra),var(--sage),var(--terra-pale));}
 nav.sc{box-shadow:var(--shadow);}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--terra);letter-spacing:.04em;text-decoration:none;}
 .nav-links{display:flex;gap:32px;list-style:none;}
@@ -43,13 +40,10 @@ nav.sc{box-shadow:var(--shadow);}
 .nav-links a:hover::after{width:100%;}
 .nav-cta{padding:10px 22px;background:var(--terra);color:#fff;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;text-decoration:none;border-radius:2px;transition:background .3s,transform .2s;font-family:'Jost',sans-serif;}
 .nav-cta:hover{background:var(--terra-light);transform:translateY(-1px);}
-
-/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:110px 60px 80px;position:relative;overflow:hidden;}
-.hbg1{position:absolute;top:-80px;right:-80px;width:520px;height:520px;background:radial-gradient(ellipse,rgba(196,114,90,0.09) 0%,transparent 68%);border-radius:50%;pointer-events:none;animation:floatA 10s ease-in-out infinite;}
+.hbg1{position:absolute;top:-80px;right:-80px;width:520px;height:520px;background:radial-gradient(ellipse,rgba(200,95,160,0.10) 0%,transparent 68%);border-radius:50%;pointer-events:none;animation:floatA 10s ease-in-out infinite;}
 .hbg2{position:absolute;bottom:-60px;left:5%;width:340px;height:340px;background:radial-gradient(ellipse,rgba(122,145,128,0.07) 0%,transparent 68%);border-radius:50%;pointer-events:none;animation:floatB 13s ease-in-out infinite;}
-.hero-vline{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(196,114,90,0.1),transparent);pointer-events:none;}
-
+.hero-vline{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(200,95,160,0.12),transparent);pointer-events:none;}
 .hero-left{position:relative;z-index:2;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;background:var(--terra-pale);border-radius:100px;font-size:11px;font-weight:500;color:var(--terra);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:fadeUp .7s ease .1s forwards;}
 .hero-badge span{width:6px;height:6px;background:var(--terra);border-radius:50%;animation:pulse 2s infinite;}
@@ -59,14 +53,13 @@ nav.sc{box-shadow:var(--shadow);}
 .hero-divider{width:48px;height:2px;background:linear-gradient(90deg,var(--terra),var(--terra-pale));margin-bottom:28px;border-radius:2px;opacity:0;animation:fadeUp .7s ease .5s forwards;}
 .hero-desc{font-size:14.5px;line-height:1.9;color:var(--ink2);max-width:430px;margin-bottom:44px;opacity:0;animation:fadeUp .7s ease .6s forwards;}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s ease .75s forwards;}
-.btn-primary{padding:14px 30px;background:var(--terra);color:#fff;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;border-radius:2px;transition:background .3s,transform .25s,box-shadow .25s;font-family:'Jost',sans-serif;box-shadow:0 4px 20px rgba(196,114,90,0.3);}
-.btn-primary:hover{background:var(--terra-light);transform:translateY(-3px);box-shadow:0 8px 28px rgba(196,114,90,0.35);}
+.btn-primary{padding:14px 30px;background:var(--terra);color:#fff;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;border-radius:2px;transition:background .3s,transform .25s,box-shadow .25s;font-family:'Jost',sans-serif;box-shadow:0 4px 20px rgba(200,95,160,0.32);}
+.btn-primary:hover{background:var(--terra-light);transform:translateY(-3px);box-shadow:0 8px 28px rgba(200,95,160,0.38);}
 .btn-ghost{padding:14px 30px;border:1.5px solid var(--border);color:var(--ink2);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;border-radius:2px;transition:border-color .3s,color .3s,background .3s;font-family:'Jost',sans-serif;}
 .btn-ghost:hover{border-color:var(--terra);color:var(--terra);background:var(--terra-pale);}
-
 .hero-right{display:flex;justify-content:center;align-items:center;position:relative;z-index:2;opacity:0;animation:fadeRight .9s ease .3s forwards;}
 .hero-card{width:340px;background:var(--off);border:1px solid var(--border);border-radius:6px;padding:40px 36px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);}
-.hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(196,114,90,0.12) 0%,transparent 70%);}
+.hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(200,95,160,0.13) 0%,transparent 70%);}
 .hcd{position:absolute;top:18px;right:18px;width:44px;height:44px;border-top:1.5px solid var(--terra);border-right:1.5px solid var(--terra);opacity:.35;}
 .hcd2{position:absolute;bottom:18px;left:18px;width:44px;height:44px;border-bottom:1.5px solid var(--terra);border-left:1.5px solid var(--terra);opacity:.35;}
 .hero-avatar{width:80px;height:80px;background:var(--paper);border:2px solid var(--terra-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--terra);font-weight:700;}
@@ -81,11 +74,8 @@ nav.sc{box-shadow:var(--shadow);}
 .cline{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);text-decoration:none;transition:color .25s;}
 .cline:hover{color:var(--terra);}
 .cico{width:28px;height:28px;background:var(--terra-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
-
 .scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);animation:fadeUp 1s ease 1.2s both;}
 .scroll-arrow{width:1px;height:40px;background:linear-gradient(to bottom,var(--terra),transparent);animation:scrollPulse 2s ease infinite;}
-
-/* SECTIONS */
 .section{padding:110px 60px;}
 .section-alt{background:var(--off);}
 .section-intro{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:72px;gap:40px;}
@@ -95,14 +85,11 @@ nav.sc{box-shadow:var(--shadow);}
 .s-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:400;line-height:1.1;}
 .s-rule{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);margin-left:24px;}
 .s-right{font-size:14px;line-height:1.8;color:var(--muted);max-width:300px;text-align:right;flex-shrink:0;}
-
-/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
 .about-p{font-size:15px;line-height:1.95;color:var(--ink2);margin-bottom:20px;}
 .about-nums{display:flex;gap:40px;margin-top:36px;padding-top:36px;border-top:1px solid var(--border);}
 .anum .n{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:300;color:var(--terra);line-height:1;}
 .anum .l{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
-
 .reco-wrap{position:sticky;top:100px;}
 .reco-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:36px 32px;position:relative;box-shadow:var(--shadow);overflow:hidden;}
 .reco-card::before{content:'\201C';position:absolute;top:-8px;left:24px;font-family:'Playfair Display',serif;font-size:6rem;color:var(--terra);opacity:.1;line-height:1;pointer-events:none;}
@@ -117,8 +104,6 @@ nav.sc{box-shadow:var(--shadow);}
 .reco-company{font-size:11px;color:var(--muted);margin-top:2px;}
 .dl-btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:11px 22px;background:var(--off);border:1px solid var(--border);border-radius:2px;font-size:12px;font-weight:500;color:var(--ink2);text-decoration:none;letter-spacing:.08em;transition:all .25s;font-family:'Jost',sans-serif;}
 .dl-btn:hover{background:var(--terra-pale);border-color:var(--terra);color:var(--terra);}
-
-/* EXPERIENCES */
 .exp-item{display:grid;grid-template-columns:200px 1fr;gap:40px;margin-bottom:64px;position:relative;}
 .exp-item::after{content:'';position:absolute;left:199px;top:10px;bottom:-32px;width:1px;background:var(--border);}
 .exp-item:last-child::after{display:none;}
@@ -135,12 +120,10 @@ nav.sc{box-shadow:var(--shadow);}
 .exp-tasks{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:8px;}
 .exp-tasks li{font-size:14px;line-height:1.7;color:var(--ink2);padding-left:18px;position:relative;}
 .exp-tasks li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--terra);}
-
-/* SKILLS */
 .skills-layout{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
 .skill-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:28px 24px;transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden;}
 .skill-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
-.skill-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:rgba(196,114,90,0.2);}
+.skill-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:rgba(200,95,160,0.25);}
 .skill-card:hover::after{transform:scaleX(1);}
 .skill-ico{font-size:26px;margin-bottom:14px;display:block;}
 .skill-head{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--terra);margin-bottom:12px;}
@@ -156,13 +139,11 @@ nav.sc{box-shadow:var(--shadow);}
 .attrs-grid{display:flex;flex-wrap:wrap;gap:12px;}
 .attr-pill{display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--off);border:1px solid var(--border);border-radius:100px;font-size:13px;color:var(--ink2);transition:all .25s;}
 .attr-pill:hover{background:var(--sage-pale);border-color:var(--sage);color:var(--sage);}
-
-/* EDUCATION */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .edu-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:30px 28px;transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;}
-.edu-card.main{border-color:rgba(196,114,90,0.3);background:linear-gradient(135deg,rgba(196,114,90,0.03),var(--white));}
+.edu-card.main{border-color:rgba(200,95,160,0.3);background:linear-gradient(135deg,rgba(200,95,160,0.04),var(--white));}
 .edu-card.main::before{content:'★ En cours';position:absolute;top:14px;right:14px;font-size:10px;background:var(--terra-pale);color:var(--terra);padding:3px 10px;border-radius:100px;letter-spacing:.08em;font-weight:500;}
-.edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(196,114,90,0.25);}
+.edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(200,95,160,0.3);}
 .edu-date{font-size:11px;color:var(--terra);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;font-weight:500;}
 .edu-degree{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;line-height:1.35;}
 .edu-school{font-size:12.5px;color:var(--muted);margin-bottom:16px;}
@@ -175,21 +156,19 @@ nav.sc{box-shadow:var(--shadow);}
 .cert-ico{font-size:22px;flex-shrink:0;margin-top:2px;}
 .cert-name{font-size:13.5px;font-weight:500;margin-bottom:4px;line-height:1.35;}
 .cert-date{font-size:11px;color:var(--muted);}
-
-/* PROJECTS */
 .projects-section{background:var(--white);}
 .proj-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;}
 .proj-filter{padding:8px 20px;background:var(--off);border:1px solid var(--border);border-radius:100px;font-size:12px;font-weight:400;color:var(--muted);cursor:pointer;transition:all .25s;font-family:'Jost',sans-serif;}
 .proj-filter:hover,.proj-filter.active{background:var(--terra-pale);border-color:var(--terra);color:var(--terra);font-weight:500;}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .proj-card{background:var(--off);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s;position:relative;}
-.proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(196,114,90,0.25);}
+.proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(200,95,160,0.3);}
 .proj-img-wrap{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--paper);}
 .proj-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
 .proj-card:hover .proj-img-wrap img{transform:scale(1.06);}
-.proj-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,24,0.75) 0%,transparent 60%);opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:20px;}
+.proj-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,46,0.75) 0%,transparent 60%);opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:20px;}
 .proj-card:hover .proj-overlay{opacity:1;}
-.proj-overlay-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.85);background:rgba(196,114,90,0.8);padding:4px 12px;border-radius:100px;}
+.proj-overlay-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.9);background:rgba(200,95,160,0.85);padding:4px 12px;border-radius:100px;}
 .proj-body{padding:22px 20px;}
 .proj-cat{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:500;margin-bottom:7px;}
 .proj-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:8px;line-height:1.3;}
@@ -197,8 +176,6 @@ nav.sc{box-shadow:var(--shadow);}
 .proj-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .proj-tag{font-size:10.5px;padding:3px 10px;background:var(--white);border:1px solid var(--border);border-radius:100px;color:var(--ink2);}
 .proj-card[data-cat].hidden{display:none;}
-
-/* DOWNLOAD */
 .download-section{background:var(--paper);}
 .dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .dl-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:36px 32px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;}
@@ -206,11 +183,9 @@ nav.sc{box-shadow:var(--shadow);}
 .dl-card-icon{font-size:36px;}
 .dl-card-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;}
 .dl-card-desc{font-size:14px;color:var(--muted);line-height:1.7;}
-.dl-card-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;background:var(--terra);color:#fff;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s;font-family:'Jost',sans-serif;align-self:flex-start;box-shadow:0 4px 16px rgba(196,114,90,0.25);}
+.dl-card-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;background:var(--terra);color:#fff;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s;font-family:'Jost',sans-serif;align-self:flex-start;box-shadow:0 4px 16px rgba(200,95,160,0.28);}
 .dl-card-btn:hover{background:var(--terra-light);transform:translateY(-2px);}
 .dl-note{font-size:11px;color:var(--muted);font-style:italic;}
-
-/* CONTACT */
 .contact-section{background:var(--white);}
 .contact-hero{text-align:center;max-width:600px;margin:0 auto 64px;}
 .contact-lead{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--ink2);line-height:1.6;margin-bottom:24px;}
@@ -228,13 +203,9 @@ nav.sc{box-shadow:var(--shadow);}
 .avail-row{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--ink2);}
 .avail-ico{width:32px;height:32px;background:var(--terra-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
 .avail-row strong{color:var(--terra);}
-
-/* FOOTER */
 footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--off);}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--terra);font-weight:700;}
 .footer-copy{font-size:11.5px;color:var(--muted);}
-
-/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
 @keyframes floatA{0%,100%{transform:translate(0,0);}50%{transform:translate(-20px,15px);}}
@@ -247,12 +218,9 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
 .reveal-l.visible{opacity:1;transform:translateX(0);}
 .reveal-r{opacity:0;transform:translateX(32px);transition:opacity .75s ease,transform .75s ease;}
 .reveal-r.visible{opacity:1;transform:translateX(0);}
-/* Safety: show everything after 2s even if JS fails */
 @keyframes safeShow{to{opacity:1;transform:none;}}
 .reveal,.reveal-l,.reveal-r{animation:safeShow 0s ease 2.5s forwards;}
 .d1{transition-delay:.12s!important;}.d2{transition-delay:.24s!important;}.d3{transition-delay:.36s!important;}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:0 24px;}.nav-links,.nav-cta{display:none;}
   .hero{grid-template-columns:1fr;padding:100px 24px 60px;}.hero-right{display:none;}
@@ -272,8 +240,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
 <body>
 <div id="cur"></div>
 <div id="cur-ring"></div>
-
-<!-- NAV -->
 <nav id="nav">
   <a class="nav-logo" href="#">B.T</a>
   <ul class="nav-links">
@@ -286,12 +252,10 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
   </ul>
   <a class="nav-cta" href="#contact">Me contacter</a>
 </nav>
-
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hbg1"></div><div class="hbg2"></div><div class="hero-vline"></div>
   <div class="hero-left">
-    <div class="hero-badge"><span></span>Disponible · Alternance &amp; Septembre. 2026</div>
+    <div class="hero-badge"><span></span>Disponible · Alternance dès septembre 2026</div>
     <h1 class="hero-name">Belva<em>Tegantchouang</em></h1>
     <p class="hero-sub">MBA Expert &amp; Marketing Digital</p>
     <div class="hero-divider"></div>
@@ -315,7 +279,7 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="stat"><span class="stat-num" data-count="9">0</span><span class="stat-label">Outils</span></div>
       </div>
       <div class="hc-contacts">
-        <a class="cline" href="mailto:tegantchouangbelva@gmail.com">tegantchouangbelva@gmail.com</a>
+        <a class="cline" href="mailto:tegantchouangbelva@gmail.com"><span class="cico">✉</span>tegantchouangbelva@gmail.com</a>
         <a class="cline" href="tel:+33667788286"><span class="cico">☎</span>+33 6 67 78 82 86</a>
         <a class="cline" href="https://linkedin.com/in/belva-tegantchouang" target="_blank"><span class="cico" style="font-size:10px;font-weight:600;">in</span>LinkedIn — Belva Tegantchouang</a>
       </div>
@@ -323,8 +287,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
   </div>
   <div class="scroll-hint"><span>Défiler</span><div class="scroll-arrow"></div></div>
 </section>
-
-<!-- ABOUT -->
 <section class="section section-alt" id="about">
   <div class="section-intro reveal">
     <div class="sil">
@@ -336,7 +298,7 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
   </div>
   <div class="about-grid">
     <div class="reveal-l">
-      <p class="about-p">Diplômée d'un Bachelor en Community Management à l'INSEEC Paris, je poursuis aujourd'hui un Master 1 en Communication, Marketing d'influence et Relations Presse. Mon parcours mêle créativité, maîtrise des outils digitaux et sens de la stratégie.</p>
+      <p class="about-p">Diplômée d'un Bachelor en Community Management à l'INSEEC Paris, je poursuis aujourd'hui un MBA Expert Marketing Digital. Mon parcours mêle créativité, maîtrise des outils digitaux et sens de la stratégie.</p>
       <p class="about-p">Issue d'un double cursus — génie logiciel au Cameroun puis communication en France — je combine une vision technique et une sensibilité créative pour aborder les projets de marque sous tous les angles.</p>
       <p class="about-p">Bilingue français (Langue maternelle) avec des notions d'anglais (B2), j'ai travaillé en France et au Cameroun, ce qui m'a forgé une capacité d'adaptation rapide dans des environnements variés.</p>
       <div class="about-nums">
@@ -372,8 +334,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
   </div>
 </section>
-
-<!-- EXPERIENCES -->
 <section class="section" id="exp">
   <div class="section-intro reveal">
     <div class="sil">
@@ -430,8 +390,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
   </div>
 </section>
-
-<!-- SKILLS -->
 <section class="section section-alt" id="skills">
   <div class="section-intro reveal">
     <div class="sil">
@@ -479,8 +437,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
   </div>
 </section>
-
-<!-- FORMATION -->
 <section class="section" id="formation">
   <div class="section-intro reveal">
     <div class="sil">
@@ -513,8 +469,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     <div class="cert-card reveal d2"><span class="cert-ico">🏆</span><div><div class="cert-name">Google Sheets No-Code</div><div class="cert-date">Novembre 2024 · INSEEC Bachelor</div></div></div>
   </div>
 </section>
-
-<!-- PROJETS -->
 <section class="section projects-section" id="projets">
   <div class="section-intro reveal">
     <div class="sil">
@@ -524,8 +478,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
     <p class="s-right">Design graphique, campagnes réseaux &amp; identités visuelles</p>
   </div>
-
-  <!-- Filtres -->
   <div class="proj-filters reveal">
     <button class="proj-filter active" onclick="filterProj('all',this)">Tous</button>
     <button class="proj-filter" onclick="filterProj('social',this)">Social Media</button>
@@ -534,10 +486,7 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     <button class="proj-filter" onclick="filterProj('campagne',this)">Campagne</button>
     <button class="proj-filter" onclick="filterProj('content',this)">Content</button>
   </div>
-
   <div class="proj-grid" id="projGrid">
-
-    <!-- Belva Délice -->
     <div class="proj-card reveal" data-cat="social campagne">
       <div class="proj-img-wrap">
         <img src="projet1.png" alt="Belva Délice — Post réseaux sociaux">
@@ -550,8 +499,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">Canva / Photoshop</span><span class="proj-tag">Copywriting</span><span class="proj-tag">Engagement</span><span class="proj-tag">Brand Content</span></div>
       </div>
     </div>
-
-    <!-- Sublima × Dermalogica -->
     <div class="proj-card reveal d1" data-cat="social campagne">
       <div class="proj-img-wrap">
         <img src="projet7.png" alt="Sublima — Post Instagram Dermalogica">
@@ -564,41 +511,32 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">Photoshop</span><span class="proj-tag">Direction artistique</span><span class="proj-tag">Promotion</span><span class="proj-tag">Beauté / Luxe</span></div>
       </div>
     </div>
-
-    <!-- CamerTech Europe — Richard-Nadine Etoundi -->
-<div class="proj-card reveal d2" data-cat="social content">
-  <div class="proj-img-wrap">
-    <img src="projet11.png" alt="CamerTech Europe — Publication Richard-Nadine Etoundi">
-    <div class="proj-overlay">
-      <span class="proj-overlay-tag">Content</span>
+    <div class="proj-card reveal d2" data-cat="social content">
+      <div class="proj-img-wrap">
+        <img src="projet11.png" alt="CamerTech Europe — Publication Richard-Nadine Etoundi">
+        <div class="proj-overlay">
+          <span class="proj-overlay-tag">Content</span>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-cat">Social Media · Content · LinkedIn</p>
+        <h3 class="proj-title">CamerTech Europe — Richard-Nadine Etoundi</h3>
+        <p class="proj-desc">
+          Création et publication d’un contenu LinkedIn mettant en lumière les
+          talents africains dans la tech. Cette publication a généré 198 likes,
+          4 commentaires et 3 republications, pour un total de 11 987 impressions
+          organiques. Elle constitue la publication ayant obtenu le meilleur
+          engagement parmi les contenus sélectionnés.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Community Management</span>
+          <span class="proj-tag">Content Creation</span>
+          <span class="proj-tag">LinkedIn</span>
+          <span class="proj-tag">198 likes</span>
+          <span class="proj-tag">11 987 impressions</span>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="proj-body">
-    <p class="proj-cat">Social Media · Content · LinkedIn</p>
-
-    <h3 class="proj-title">CamerTech Europe — Richard-Nadine Etoundi</h3>
-
-    <p class="proj-desc">
-      Création et publication d’un contenu LinkedIn mettant en lumière les
-      talents africains dans la tech. Cette publication a généré 198 likes,
-      4 commentaires et 3 republications, pour un total de 11 987 impressions
-      organiques. Elle constitue la publication ayant obtenu le meilleur
-      engagement parmi les contenus sélectionnés.
-    </p>
-
-    <div class="proj-tags">
-      <span class="proj-tag">Community Management</span>
-      <span class="proj-tag">Content Creation</span>
-      <span class="proj-tag">LinkedIn</span>
-      <span class="proj-tag">198 likes</span>
-      <span class="proj-tag">11 987 impressions</span>
-    </div>
-  </div>
-</div>
-
-    
-    <!-- Eclat Instantané -->
     <div class="proj-card reveal" data-cat="campagne">
       <div class="proj-img-wrap">
         <img src="projet2.png" alt="Eclat Instantané — Visuel Sublima">
@@ -611,8 +549,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">Illustrator</span><span class="proj-tag">Mise en page</span><span class="proj-tag">Cosmétique</span><span class="proj-tag">Premium</span></div>
       </div>
     </div>
-
-    <!-- Miel Montsouris -->
     <div class="proj-card reveal d1" data-cat="branding">
       <div class="proj-img-wrap">
         <img src="projet6.png" alt="Miel Montsouris — Logo">
@@ -625,42 +561,32 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">Illustrator</span><span class="proj-tag">Logo Design</span><span class="proj-tag">Artisanat</span><span class="proj-tag">Identité de marque</span></div>
       </div>
     </div>
-
-
-    <!-- CamerTech Europe — Steve Elanga -->
-<div class="proj-card reveal d2" data-cat="social content">
-  <div class="proj-img-wrap">
-    <img src="projet12.png" alt="CamerTech Europe — Publication Steve Elanga">
-    <div class="proj-overlay">
-      <span class="proj-overlay-tag">Content</span>
+    <div class="proj-card reveal d2" data-cat="social content">
+      <div class="proj-img-wrap">
+        <img src="projet12.png" alt="CamerTech Europe — Publication Steve Elanga">
+        <div class="proj-overlay">
+          <span class="proj-overlay-tag">Content</span>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-cat">Social Media · Content · LinkedIn</p>
+        <h3 class="proj-title">CamerTech Europe — Steve Elanga</h3>
+        <p class="proj-desc">
+          Création et publication d’un contenu LinkedIn autour de la data et de
+          l’innovation. Cette publication a obtenu 171 likes, 2 commentaires et
+          5 republications, pour un total de 12 783 impressions. Elle constitue
+          la publication ayant obtenu la meilleure visibilité parmi les contenus
+          sélectionnés.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Community Management</span>
+          <span class="proj-tag">Content Creation</span>
+          <span class="proj-tag">LinkedIn</span>
+          <span class="proj-tag">171 likes</span>
+          <span class="proj-tag">12 783 impressions</span>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="proj-body">
-    <p class="proj-cat">Social Media · Content · LinkedIn</p>
-
-    <h3 class="proj-title">CamerTech Europe — Steve Elanga</h3>
-
-    <p class="proj-desc">
-      Création et publication d’un contenu LinkedIn autour de la data et de
-      l’innovation. Cette publication a obtenu 171 likes, 2 commentaires et
-      5 republications, pour un total de 12 783 impressions. Elle constitue
-      la publication ayant obtenu la meilleure visibilité parmi les contenus
-      sélectionnés.
-    </p>
-
-    <div class="proj-tags">
-      <span class="proj-tag">Community Management</span>
-      <span class="proj-tag">Content Creation</span>
-      <span class="proj-tag">LinkedIn</span>
-      <span class="proj-tag">171 likes</span>
-      <span class="proj-tag">12 783 impressions</span>
-    </div>
-  </div>
-</div>
-
-    
-    <!-- Kim Art Beauty -->
     <div class="proj-card reveal" data-cat="social branding">
       <div class="proj-img-wrap">
         <img src="projet4.png" alt="Kim Art Beauty — Post Instagram">
@@ -673,8 +599,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">Canva</span><span class="proj-tag">Community Management</span><span class="proj-tag">Beauté</span><span class="proj-tag">Afrique</span></div>
       </div>
     </div>
-
-    <!-- Milka Moodboard -->
     <div class="proj-card reveal d1" data-cat="campagne branding">
       <div class="proj-img-wrap">
         <img src="projet5.png" alt="Milka — Moodboard stratégie d'influence">
@@ -687,8 +611,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">Marketing d'influence</span><span class="proj-tag">Moodboard</span><span class="proj-tag">Casting</span><span class="proj-tag">Stratégie</span></div>
       </div>
     </div>
-
-    <!-- Thai Wellness -->
     <div class="proj-card reveal d2" data-cat="social campagne">
       <div class="proj-img-wrap">
         <img src="projet8.png" alt="Thai Wellness — Carousel Instagram">
@@ -701,8 +623,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">Canva</span><span class="proj-tag">Carousel</span><span class="proj-tag">Bien-être</span><span class="proj-tag">Storytelling visuel</span></div>
       </div>
     </div>
-
-    <!-- Menteemee UX -->
     <div class="proj-card reveal" data-cat="ux">
       <div class="proj-img-wrap">
         <img src="projet3.png" alt="Menteemee — Interface mobile">
@@ -715,11 +635,8 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
         <div class="proj-tags"><span class="proj-tag">UX Design</span><span class="proj-tag">Figma / Canva</span><span class="proj-tag">App Mobile</span><span class="proj-tag">Mentorat</span></div>
       </div>
     </div>
-
   </div>
 </section>
-
-<!-- DOCUMENTS -->
 <section class="section download-section" id="docs">
   <div class="section-intro reveal">
     <div class="sil">
@@ -751,8 +668,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section class="section contact-section section-alt" id="contact">
   <div class="section-intro reveal" style="justify-content:center;">
     <div class="sil" style="justify-content:center;">
@@ -765,7 +680,7 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     <div class="avail-badge"><span class="avail-dot"></span>Disponible dès maintenant</div>
   </div>
   <div class="contact-grid reveal">
-    <a class="contact-card" href="mailto:tegantchouangbelva@gmail.com">tegantchouangbelva@gmail.com</a>
+    <a class="contact-card" href="mailto:tegantchouangbelva@gmail.com"><div class="contact-card-ico">✉️</div><div><div class="contact-card-lbl">Email</div><div class="contact-card-val">tegantchouangbelva@gmail.com</div></div></a>
     <a class="contact-card" href="tel:+33667788286"><div class="contact-card-ico">📞</div><div><div class="contact-card-lbl">Téléphone</div><div class="contact-card-val">+33 6 67 78 82 86</div></div></a>
     <a class="contact-card" href="https://www.linkedin.com/in/belva-tegantchouang-0b314732a/" target="_blank"><div class="contact-card-ico">💼</div><div><div class="contact-card-lbl">LinkedIn</div><div class="contact-card-val">Belva Tegantchouang</div></div></a>
     <div class="contact-card" style="cursor:default;"><div class="contact-card-ico">📍</div><div><div class="contact-card-lbl">Mobile dans toute</div><div class="contact-card-val">la France</div></div></div>
@@ -779,15 +694,11 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <span class="footer-logo">Belva Tegantchouang</span>
   <span class="footer-copy">MBA Expert &amp; Marketing Digital · MyDigitalSchool · © 2026</span>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Cursor
+<script>
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
@@ -796,18 +707,12 @@ document.querySelectorAll('a,button,.skill-card,.contact-card,.dl-card,.edu-card
   el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
   el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
 });
-
-// Nav
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>40));
-
-// Scroll reveal
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:0.08});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
-
-// Project filters
 function filterProj(cat, btn) {
   document.querySelectorAll('.proj-filter').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
@@ -823,14 +728,10 @@ function filterProj(cat, btn) {
     }
   });
 }
-
-// Cursor hover on project cards
 document.querySelectorAll('.proj-card,.proj-filter').forEach(el=>{
   el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
   el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
 });
-
-// Count-up animation
 document.querySelectorAll('[data-count]').forEach(el=>{
   const co=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
@@ -846,3 +747,4 @@ document.querySelectorAll('[data-count]').forEach(el=>{
 </script>
 </body>
 </html>
+ 
